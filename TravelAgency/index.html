@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <title>Traveling Agency</title>
+</head>
+<body>
+     <!-- start of header section -->
+     <header>
+        <a href="#" class="logo">Traveling Agency</a>
+        <div class="menuToggle" onclick="toggleMenu()"></div>
+        <ul class="nav">
+            <li><a href="#banner"onclick="toggleMenu()">Home</a></li>
+            <li><a href="#about"onclick="toggleMenu()">About</a></li>
+            <li><a href="#menu"onclick="toggleMenu()">Menu</a></li>
+            <li><a href="#expert"onclick="toggleMenu()">Expert</a></li>
+            <li><a href="#testimonials"onclick="toggleMenu()">Testimonials</a></li>
+            <li><a href="#contact"onclick="toggleMenu()">Contact</a></li>
+        </ul>
+    </header>
+    <div class="container">
+        
+        <div class="slide slide-1">
+            <div class="caption">
+                <div class="arrow l" onclick="prev()">
+                    <img src="img/chevron-left.svg" alt="">
+                </div>
+                <h2>Maldivies</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, recusandae.</p>
+                <div class="arrow r" onclick="next()">
+                    <img src="img/chevron-right.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="slide slide-2">
+            <div class="caption">
+                <div class="arrow l" onclick="prev()">
+                    <img src="img/chevron-left.svg" alt="">
+                </div>
+                <h2>Fiji</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, recusandae.</p>
+                <div class="arrow r" onclick="next()">
+                    <img src="img/chevron-right.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="slide slide-3">
+            <div class="caption">
+                <div class="arrow l" onclick="prev()">
+                    <img src="img/chevron-left.svg" alt="">
+                </div>
+                <h2>Bahamas</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic, recusandae.</p>
+                <div class="arrow r" onclick="next()">
+                    <img src="img/chevron-right.svg" alt="">
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+
+
+
+
+
+    <script>
+           window.addEventListener('scroll', function(){
+        const header = document.querySelector('header');
+        header.classList.toggle('sticky', window.scrollY > 0)
+    })
+    
+    function toggleMenu(){
+        const menuToggle = document.querySelector('.menuToggle');
+        const navigation = document.querySelector('.nav');
+        menuToggle.classList.toggle('active');
+        navigation.classList.toggle('active');
+    }
+    let slide = document.querySelectorAll('.slide');
+        var current = 0;
+
+        function cls(){
+            for(let i = 0; i < slide.length; i++){
+                slide[i].style.display = 'none';
+            }
+        }
+        function next(){
+            cls();
+            if(current === slide.length-1) current = -1;
+            current++;
+            slide[current].style.display = 'block';
+            slide[current].style.opacity = 0.4;
+
+            var x = 0.4;
+            var intX = setInterval(function(){
+                x += 0.1;
+                slide[current].style.opacity = x;
+                if(x >= 1){
+                    clearInterval(intX);
+                    x= 0.4;
+                }
+            }, 100);
+
+        }
+        function prev(){
+            cls();
+            if(current === 0) current = slide.length;
+            current--;
+            slide[current].style.display = 'block';
+            slide[current].style.opacity = 0.4;
+
+            var x = 0.4;
+            var intX = setInterval(function(){
+                x += 0.1;
+                slide[current].style.opacity = x;
+                if(x >= 1){
+                    clearInterval(intX);
+                    x= 0.4;
+                }
+            }, 100);
+
+        }
+        function start(){
+            cls();
+            slide[current].style.display = 'block';
+        }
+        start();
+    </script>
+</body>
+</html>
