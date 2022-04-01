@@ -9,10 +9,10 @@ header{
     justify-content: space-between;
     align-items: center;
     transition: 500ms;
-    background: rgba(0, 0, 0, 0.05);
+    background: rgba(0, 0, 0, 0.477);
     }
     header.sticky{
-        background: #ffffff;
+        background: #000000;
         padding: 10px 100px;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     }
@@ -23,10 +23,6 @@ header{
         text-decoration: none;
         font-family: 'Hurricane', cursive;
     }
-    header.sticky .logo{
-        color: #111111;
-    }
-   
     header ul{
         display: flex;
         position: relative;
@@ -37,15 +33,12 @@ header{
     }
     header ul li a{
         text-decoration: none;
-        color: #ffffff;
+        color: #ffffffaa;
         font-weight: 300;
         transition: 500ms;
     }
-    header.sticky ul li a{
-        color: #111111;
-    }
     header ul li a:hover{
-        color: #055199;
+        color: #ffffff;
     }
     @media (max-width: 991px){
         header,
