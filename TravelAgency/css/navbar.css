@@ -71,15 +71,12 @@ header{
        cursor: pointer;
         }
         .menuToggle.active{
-            background: url(../img/close.png);
+            background: url(../img/close.png);        
             background-size: 25px;
             background-position: center;
             background-repeat: no-repeat;
     
         }
-        header.sticky .menuToggle{
-            filter: invert(1);
-        }  
         header ul li {
            margin-left: 0;
         }    
@@ -90,9 +87,6 @@ header{
         } 
             .banner .content h2 {
                 font-size: 3em;           
-            }
-            section{
-                padding: 20px;
             }
             .row {
                
